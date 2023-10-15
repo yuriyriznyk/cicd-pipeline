@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
           steps {
-            sh "scripts/build.sh"
+            sh "scripts/test.sh"
           }
         }
         stage('Image build') {
