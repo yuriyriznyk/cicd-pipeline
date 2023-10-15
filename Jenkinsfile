@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('code'){
+            steps{
+                git url: 'https://github.com/yuriyriznyk/cicd-pipeline.git', branch: 'main'
+            }
+        }
         stage('Build') {
             steps {
                 sh "scripts/build.sh"
