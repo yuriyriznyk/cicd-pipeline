@@ -11,5 +11,10 @@ pipeline {
             sh "scripts/build.sh"
           }
         }
+        stage('Image build') {
+          steps {
+            sh "docker build -t yuriiriznyk/cicd-pipeline"
+          }
+        }
     }
 }
