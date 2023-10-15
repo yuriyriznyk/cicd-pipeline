@@ -19,6 +19,11 @@ pipeline {
         stage('Image build') {
           steps {
             sh "docker build -t yuriiriznyk/cicd-pipeline ."
+            script {
+              docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                docker.push('yuriiriznyk/cicd-pipeline')
+              }
+            }
           }
         }
     }
