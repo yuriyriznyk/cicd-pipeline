@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Image build') {
           steps {
-            sh "docker build -t yuriiriznyk/cicd-pipeline"
+            sh "docker build -t yuriiriznyk/cicd-pipeline ."
           }
         }
     }
