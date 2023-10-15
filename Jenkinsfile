@@ -21,7 +21,8 @@ pipeline {
             sh "docker build -t yuriiriznyk/cicd-pipeline ."
             script {
               docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                docker.push('yuriiriznyk/cicd-pipeline')
+                def image = docker.image('yuriiriznyk/cicd-pipeline');
+                image.push('latest')
               }
             }
           }
